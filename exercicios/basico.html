@@ -12,6 +12,8 @@
         <p>1) {{ 2 + 2}}</p>
         <p>2) {{ "teste".toUpperCase()}}</p>
         <p>3) Produto: {{ caneta }} , R$ {{ preco }}, Desconto {{ desconto * 100}}</p>
+        <p>Hora Atual {{ horaAutal()}}</p>
+        <p>5) Desconto {{ precoComDesonto}}</p>
     </div>
     <script>
         new Vue({
@@ -20,6 +22,17 @@
                 caneta: 'Bike',
                 preco: 68.90,
                 desconto: 0.15
+            },
+            methods: {
+                horaAutal(){
+                    return new Date().toLocaleString();
+                }
+            },
+            computed: {
+                precoComDesonto(){
+                    return this.preco * (1 - this.desconto)
+                }
+
             }
         })
     </script>
