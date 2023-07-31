@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Conceitos Básicos</title>
+    <link rel="stylesheet" href="/css/estilo.css">
+    <script src="/js/vue.min.js"></script>
+</head>
+<body class="exercicio">
+
+    <div id="app">
+        <p>1) {{ 2 + 2}}</p>
+        <p>2) {{ "teste".toUpperCase()}}</p>
+        <p>3) Produto: {{ caneta }} , R$ {{ preco }}, Desconto {{ desconto * 100}}</p>
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                caneta: 'Bike',
+                preco: 68.90,
+                desconto: 0.15
+            }
+        })
+    </script>
+</body>
+</html>
